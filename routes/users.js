@@ -24,10 +24,22 @@ router.get('/delete/:id', function(req,res){
 });
 
 router.get('/template', function(req, res, next) {
-
-  
    res.render("base.twig");
   });
+
+  /*show from user */
+router.get('/showform', function(req, res){
+  res.render("userAdd.twig");
+
+  });
+
+   /*ajouter dans bd */
+router.post('/adduser', function(req,res){
+  console.log(req.body.nom)
+  res.send(userAreq.body.nom);
+
+  });
+
 
 
 
