@@ -35,8 +35,12 @@ router.get('/showform', function(req, res){
 
    /*ajouter dans bd */
 router.post('/adduser', function(req,res){
-  console.log(req.body.nom)
-  res.send(userAreq.body.nom);
+  //console.log(req.body.nom)
+  user= new U (req.body);
+    user.save(()=>{
+    res.redirect('/users/')
+    })
+    // res.end;
 
   });
 

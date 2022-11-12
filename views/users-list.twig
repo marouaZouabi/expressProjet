@@ -32,4 +32,25 @@
 lite users
 { % endblock %}
 #}
+<table border ="1">
+<thead>
+<th>nom & prenom</th>
+<th>email</th>
+<th>age</th>
+<th>action</th>
+</thead>
+<tbody>
 
+{% for item in data %}
+
+<tr>
+<td>{{item.prenom}} {{item.nom}} </td> 
+<td>{{item.email}}</td>
+<td>{{item.age}}</td>
+<td> <a href="/users/delete/{{item._id}}">Delete</td> 
+</tr>
+
+{% endfor %}
+
+</tbody>
+</table>
